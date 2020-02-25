@@ -5,12 +5,13 @@ import java.util.Scanner;
 
 public class TiradaMoneda {
 	public static void main(String[] args) {
-//las variables a y b servirán para guardar el resultado de la tirada de dos monedas
-		int a, b;
+/*las variables a y b servirán para 
+ * guardar el resultado de la tirada de dos monedas
+ */
+		int ladoA, ladoB;
 		int contadorCaras = 0, contadorCruces = 0, numTiradas;
 /*las variables contador1 y contador2 servirán 
- * para guardar el número de caras y cruces dobles consecutivas*
- */
+ * para guardar el número de caras y cruces dobles consecutivas*/
 		int cont1 = 0, cont2 = 0;
 		int maximoCarasDoblesConsecutivas = 0, maximoCrucesDoblesConsecutivas = 0;
 		boolean esCruzDoble = false, esCaraDoble = false;
@@ -22,17 +23,17 @@ public class TiradaMoneda {
 			numTiradas = teclado.nextInt();
 		} while (numTiradas < 1 || numTiradas > 50);
 		for (int i = 0; i < numTiradas; i++) {
-			a = (int) (Math.random() * 2);
-			b = (int) (Math.random() * 2);
+			ladoA = (int) (Math.random() * 2);
+			ladoB = (int) (Math.random() * 2);
 
-			if (a == 0) {
+			if (ladoA == 0) {
 				contadorCaras++;
 				tirada1 = "cara";
 			} else {
 				contadorCruces++;
 				tirada1 = "cruz";
 			}
-			if (b == 0) {
+			if (ladoB == 0) {
 				contadorCaras++;
 				tirada2 = "cara";
 			} else {
@@ -40,8 +41,8 @@ public class TiradaMoneda {
 				tirada2 = "cruz";
 			}
 			System.out.println("Moneda 1: " + tirada1 + ", Moneda 2: " + tirada2);
-			if (a == b) {
-				if (a == 0) {
+			if (ladoA == ladoB) {
+				if (ladoA == 0) {
 					esCaraDoble = true;
 					esCruzDoble = false;
 				} else {
@@ -70,7 +71,7 @@ public class TiradaMoneda {
 			}
 		}
 		System.out.println("Caras: " + contadorCaras + ", Cruces: " + contadorCruces);
-		System.out.println("Maximo de caras dobles consecutivas: " + maximoCarasDoblesConsecutivas); 
-		System.out.println("Maximo de cruces dobles consecutivas: " + maximoCrucesDoblesConsecutivas); 
+		System.out.println("Maximo de caras dobles consecutivas: " + maximoCarasDoblesConsecutivas); // NOPMD by ismae on 24/02/20 22:29
+		System.out.println("Maximo de cruces dobles consecutivas: " + maximoCrucesDoblesConsecutivas); // NOPMD by ismae on 24/02/20 22:29
 	}
 }
